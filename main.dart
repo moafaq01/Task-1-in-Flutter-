@@ -4,7 +4,6 @@ void main() {
   runApp(const PremiumCoffeeApp());
 }
 
-// نموذج بيانات المنتج
 class Coffee {
   final String name;
   final String description;
@@ -27,13 +26,13 @@ class PremiumCoffeeApp extends StatelessWidget {
     return MaterialApp(
       title: 'أروما كافيه',
       debugShowCheckedModeBanner: false,
-      // تصميم احترافي داكن (Dark Theme) مع ألوان ذهبية/بنية دافئة
+  
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF121212),
         colorScheme: const ColorScheme.dark(
-          primary: Color(0xFFD4A373), // لون ذهبي مائل للبني الفاتح للتميز
+          primary: Color(0xFFD4A373), 
           secondary: Color(0xFFFAEDCD),
           surface: Color(0xFF1E1E1E),
         ),
@@ -42,7 +41,7 @@ class PremiumCoffeeApp extends StatelessWidget {
           elevation: 0,
           centerTitle: true,
         ),
-        fontFamily: 'Roboto', // يمكن تغييره لخط عربي مثل Cairo لاحقاً
+        fontFamily: 'Roboto', 
       ),
       builder: (context, child) {
         return Directionality(
@@ -50,15 +49,14 @@ class PremiumCoffeeApp extends StatelessWidget {
           child: child!,
         );
       },
-      home: const WelcomeScreen(), // البداية مع شاشة تسجيل الدخول/الترحيب
+      home: const WelcomeScreen(), 
     );
   }
 }
 
-// ---------------------------------------------------------------------------
-// 1. شاشة الترحيب / تسجيل الدخول
-// توضح استخدام: Navigator.pushReplacement
-// ---------------------------------------------------------------------------
+// شاشة الترحيب / تسجيل الدخول
+
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -91,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 60),
             ElevatedButton(
               onPressed: () {
-                // الانتقال إلى الشاشة الرئيسية بدون إمكانية العودة (استبدال)
+            
                 Navigator.pushReplacement(
                   context,
                   PageRouteBuilder(
@@ -119,10 +117,9 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// 2. الشاشة الرئيسية
-// توضح استخدام: Navigator.push
-// ---------------------------------------------------------------------------
+
+//  الشاشة الرئيسية
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -159,7 +156,7 @@ class HomeScreen extends StatelessWidget {
             
             const SizedBox(height: 20),
             
-            // بطاقة الانتقال إلى شاشة التفاصيل العامة
+         
             _buildActionCard(
               context,
               title: 'عن أروما كافيه',
@@ -223,10 +220,9 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// 3. شاشة التفاصيل العامة (معلومات عامة)
-// توضح استخدام: Navigator.pop
-// ---------------------------------------------------------------------------
+
+//  شاشة التفاصيل العامة (معلومات عامة)
+
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
@@ -266,10 +262,9 @@ class AboutScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// 4. شاشة قائمة المنتجات
-// توضح استخدام: تمرير البيانات (إلى تفاصيل المنتج) واستقبال النتيجة عبر await
-// ---------------------------------------------------------------------------
+
+//  شاشة قائمة المنتجات
+
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
@@ -312,7 +307,7 @@ class MenuScreen extends StatelessWidget {
               ),
               trailing: const Icon(Icons.chevron_right_rounded, color: Colors.grey),
               onTap: () async {
-                // الانتظار للحصول على النتيجة من شاشة التفاصيل
+                
                 final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -346,10 +341,7 @@ class MenuScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// 5. شاشة تفاصيل المنتج
-// توضح استخدام: استلام البيانات عبر المُنشئ (Constructor)، وإرجاع النتيجة عبر pop
-// ---------------------------------------------------------------------------
+
 class CoffeeDetailScreen extends StatelessWidget {
   final Coffee coffee;
 
@@ -386,7 +378,7 @@ class CoffeeDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 40),
                   
-                  // التفاصيل
+              
                   Text(
                     coffee.name,
                     style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -407,7 +399,7 @@ class CoffeeDetailScreen extends StatelessWidget {
             ),
           ),
           
-          // شريط سفلي للأزرار
+      
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -420,7 +412,7 @@ class CoffeeDetailScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      // إغلاق الشاشة وإرجاع نص النتيجة إلى الشاشة السابقة
+                      
                       Navigator.pop(context, 'تمت إضافة "${coffee.name}" للمفضلة ☕');
                     },
                     icon: const Icon(Icons.favorite_border_rounded),
