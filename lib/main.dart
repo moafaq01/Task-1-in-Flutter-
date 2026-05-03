@@ -29,17 +29,19 @@ class PremiumCoffeeApp extends StatelessWidget {
   
       theme: ThemeData(
         useMaterial3: true,
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF121212),
-        colorScheme: const ColorScheme.dark(
-          primary: Color(0xFFD4A373), 
-          secondary: Color(0xFFFAEDCD),
-          surface: Color(0xFF1E1E1E),
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: const Color(0xFFF0F7F4),
+        colorScheme: const ColorScheme.light(
+          primary: Color(0xFF00B894), // Mint Green
+          secondary: Color(0xFF6C5CE7), // Vibrant Purple
+          surface: Colors.white,
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
+          titleTextStyle: TextStyle(color: Color(0xFF2D3436), fontSize: 20, fontWeight: FontWeight.bold),
+          iconTheme: IconThemeData(color: Color(0xFF2D3436)),
         ),
         fontFamily: 'Roboto', 
       ),
@@ -67,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF2C1E16), Color(0xFF121212)],
+            colors: [Color(0xFF55E6C1), Color(0xFFF0F7F4)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -75,16 +77,16 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.coffee_rounded, size: 100, color: Color(0xFFD4A373)),
+            const Icon(Icons.spa_rounded, size: 100, color: Color(0xFF00B894)),
             const SizedBox(height: 20),
             const Text(
               'أروما كافيه',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Color(0xFF2D3436)),
             ),
             const SizedBox(height: 10),
             const Text(
-              'القهوة المختصة، في متناول يدك',
-              style: TextStyle(fontSize: 16, color: Colors.white70),
+              'لحظات مليئة بالحياة والسعادة',
+              style: TextStyle(fontSize: 16, color: Color(0xFF636E72)),
             ),
             const SizedBox(height: 60),
             ElevatedButton(
@@ -101,14 +103,14 @@ class WelcomeScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFD4A373),
-                foregroundColor: const Color(0xFF121212),
+                backgroundColor: const Color(0xFF00B894),
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              child: const Text('دخول لتجربة القهوة', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              child: const Text('ابدأ رحلة السعادة', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
           ],
         ),
@@ -196,8 +198,8 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
-                shape: BoxShape.circle,
+                color: Theme.of(context).colorScheme.primary.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(15),
               ),
               child: Icon(icon, color: Theme.of(context).colorScheme.primary, size: 30),
             ),
@@ -206,13 +208,13 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF2D3436))),
                   const SizedBox(height: 5),
-                  Text(subtitle, style: const TextStyle(color: Colors.grey, fontSize: 14)),
+                  Text(subtitle, style: const TextStyle(color: Color(0xFF636E72), fontSize: 14)),
                 ],
               ),
             ),
-            const Icon(Icons.arrow_forward_ios_rounded, color: Colors.grey, size: 16),
+            const Icon(Icons.arrow_forward_ios_rounded, color: Color(0xFFB2BEC3), size: 16),
           ],
         ),
       ),
@@ -236,22 +238,23 @@ class AboutScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.local_cafe_rounded, size: 80, color: Color(0xFFD4A373)),
+              const Icon(Icons.auto_awesome_rounded, size: 80, color: Color(0xFF00B894)),
               const SizedBox(height: 30),
               const Text(
-                'شغفنا هو تقديم أفضل تجربة قهوة.\nنحن نختار حبوبنا بعناية من أفضل المزارع حول العالم.',
+                'شغفنا هو تقديم لحظات سعيدة.\nنحن نختار كل تفصيلة لتشرح صدرك وتجدد طاقتك.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, height: 1.5),
+                style: TextStyle(fontSize: 18, height: 1.5, color: Color(0xFF2D3436)),
               ),
               const SizedBox(height: 50),
-              OutlinedButton.icon(
+              ElevatedButton.icon(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back_rounded),
                 label: const Text('العودة للرئيسية'),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: const Color(0xFFD4A373),
-                  side: const BorderSide(color: Color(0xFFD4A373)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF6C5CE7),
+                  foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                 ),
               )
             ],
@@ -295,17 +298,17 @@ class MenuScreen extends StatelessWidget {
               leading: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFD4A373).withOpacity(0.2),
+                  color: const Color(0xFF00B894).withOpacity(0.15),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Icon(coffee.icon, color: const Color(0xFFD4A373), size: 30),
+                child: Icon(coffee.icon, color: const Color(0xFF00B894), size: 30),
               ),
-              title: Text(coffee.name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              title: Text(coffee.name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF2D3436))),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 8.0),
-                child: Text('${coffee.price} ريال', style: const TextStyle(color: Color(0xFFD4A373), fontWeight: FontWeight.bold)),
+                child: Text('${coffee.price} ريال', style: const TextStyle(color: Color(0xFF6C5CE7), fontWeight: FontWeight.bold)),
               ),
-              trailing: const Icon(Icons.chevron_right_rounded, color: Colors.grey),
+              trailing: const Icon(Icons.add_circle_outline_rounded, color: Color(0xFF00B894)),
               onTap: () async {
                 
                 final result = await Navigator.push(
@@ -403,9 +406,9 @@ class CoffeeDetailScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: Colors.white,
               borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 20)],
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20)],
             ),
             child: Row(
               children: [
@@ -413,13 +416,13 @@ class CoffeeDetailScreen extends StatelessWidget {
                   child: ElevatedButton.icon(
                     onPressed: () {
                       
-                      Navigator.pop(context, 'تمت إضافة "${coffee.name}" للمفضلة ☕');
+                      Navigator.pop(context, 'تمت إضافة "${coffee.name}" لطلباتك السعيدة 🌟');
                     },
-                    icon: const Icon(Icons.favorite_border_rounded),
+                    icon: const Icon(Icons.favorite_rounded),
                     label: const Text('أضف للمفضلة'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFD4A373),
-                      foregroundColor: const Color(0xFF121212),
+                      backgroundColor: const Color(0xFF00B894),
+                      foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     ),
