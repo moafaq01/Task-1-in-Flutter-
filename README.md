@@ -5,19 +5,19 @@
 
 ### 1. الشاشة الرئيسية (Home Screen)
 تتميز بتصميم يفتح النفس مع بطاقات عريضة وسهلة الاستخدام للوصول إلى القائمة أو المعلومات.
-![Home Screen](Pictures\coffee1.png)
+![Home Screen](C:\Users\Moafaq\Pictures\coffee1.png)
 
 ### 2. قائمة المشروبات (Menu Screen)
 قائمة تعرض أصناف القهوة مع أسعارها، وتعتمد على مبدأ الـ ListBuilder لتنظيم البيانات.
-![Menu Screen](screenshots/coffee2.png)
+![Menu Screen](C:\Users\Moafaq\Pictures/coffee2.png)
 
 ### 3. تفاصيل المشروب (Detail Screen)
 شاشة توضح تفاصيل كل منتج مع استخدام خاصية الـ Hero Animation للانتقال السلس للصور.
-![Detail Screen](screenshots/coffee3.png)
+![Detail Screen](C:\Users\Moafaq\Pictures/coffee3.png)
 
 ### 4. عن أروما (About Screen)
 شاشة تعريفية بسيطة وأنيقة تعبر عن شغف العلامة التجارية.
-![About Screen](screenshots/coffee4.png)
+![About Screen](C:\Users\Moafaq\Pictures/coffee4.png)
 
 ## المميزات التقنية:
 - **التنقل (Basic Stack Navigation):** استخدام `Navigator.push` و `Navigator.pop`.
