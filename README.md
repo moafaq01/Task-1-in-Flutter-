@@ -5,7 +5,7 @@
 
 ### 1. الشاشة الرئيسية (Home Screen)
 تتميز بتصميم يفتح النفس مع بطاقات عريضة وسهلة الاستخدام للوصول إلى القائمة أو المعلومات.
-![Home Screen](C:\Users\Moafaq\Pictures\coffee1.png)
+![Home Screen](Pictures\coffee1.png)
 
 ### 2. قائمة المشروبات (Menu Screen)
 قائمة تعرض أصناف القهوة مع أسعارها، وتعتمد على مبدأ الـ ListBuilder لتنظيم البيانات.
