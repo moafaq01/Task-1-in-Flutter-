@@ -5,19 +5,19 @@
 
 ### 1. الشاشة الرئيسية (Home Screen)
 .
-![Home Screen](C:\Users\Moafaq\Pictures\coffee1.png)
+![Home Screen](assets/images/coffee1.png)
 
 ### 2. قائمة المشروبات (Menu Screen)
 .
-![Menu Screen](C:\Users\Moafaq\Pictures/coffee2.png)
+![Menu Screen](assets/images/coffee2.png)
 
 ### 3. تفاصيل المشروب (Detail Screen)
 .
-![Detail Screen](C:\Users\Moafaq\Pictures/coffee3.png)
+![Detail Screen](assets/images/coffee3.png)
 
 ### 4. عن أروما (About Screen)
 .
-![About Screen](C:\Users\Moafaq\Pictures/coffee4.png)
+![About Screen](assets/images/coffee4.png)
 
 ## المميزات التقنية:
 - **التنقل (Basic Stack Navigation):** استخدام `Navigator.push` و `Navigator.pop`.
