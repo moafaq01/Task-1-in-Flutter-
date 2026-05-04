@@ -23,6 +23,5 @@
 - **التنقل (Basic Stack Navigation):** استخدام `Navigator.push` و `Navigator.pop`.
 - **تمرير البيانات (Passing Data):** إرسال كائنات (Objects) من شاشة إلى أخرى.
 - **إرجاع النتائج (Returning Results):** استلام نص النتيجة من شاشة التفاصيل وإظهاره عبر `SnackBar`.
-- **تصميم حيوي (Vibrant UI):** استخدام ألوان زاهية (Mint & Purple) وتصميم Light Mode مريح.
+  
 
----
